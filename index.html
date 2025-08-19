@@ -2,198 +2,114 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>My Startup</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vaibhav Startup</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- TailwindCSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
   <style>
     body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-    }
-    header {
-      background: #4CAF50;
-      color: #fff;
-      padding: 20px 0;
-      text-align: center;
-    }
-    nav {
-      margin: 15px 0;
-    }
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-    }
-    section {
-      padding: 40px;
-      text-align: center;
-    }
-    h2 {
-      color: #333;
-      margin-bottom: 20px;
-    }
-    .services {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-    .service-box {
-      background: #f4f4f4;
-      padding: 20px;
-      border-radius: 8px;
-      width: 250px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    footer {
-      background: #333;
-      color: #fff;
-      text-align: center;
-      padding: 15px;
-      margin-top: 20px;
-    }
-    .contact-links a {
-      display: inline-block;
-      margin: 10px;
-      padding: 10px 20px;
-      background: #4CAF50;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: 0.3s;
-    }
-    .contact-links a:hover {
-      background: #45a049;
-    }
-    /* Hero section styling */
-    .hero {
-      background: linear-gradient(to right, #ebf8ff, #e0e7ff);
-      padding: 60px 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-    .hero-content {
-      max-width: 800px;
-    }
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-      color: #222;
-    }
-    .hero p {
-      font-size: 1.2rem;
-      color: #555;
-      margin-bottom: 30px;
-    }
-    .hero-buttons a {
-      display: inline-block;
-      margin: 10px;
-      padding: 12px 24px;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-    .btn-primary {
-      background: #4F46E5;
-      color: #fff;
-    }
-    .btn-primary:hover {
-      background: #4338CA;
-    }
-    .btn-secondary {
-      border: 2px solid #4F46E5;
-      color: #4F46E5;
-    }
-    .btn-secondary:hover {
-      background: #eef2ff;
-    }
-    .hero img {
-      margin-top: 30px;
-      max-width: 300px;
-      border-radius: 12px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      font-family: 'Inter', sans-serif;
     }
   </style>
 </head>
-<body>
+<body class="bg-gray-50 text-gray-800">
 
   <!-- Header -->
-  <header>
-    <h1>Welcome to Real World</h1>
-    <p>Your AI guide to real-world systems in India</p>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#contact">Contact</a>
+  <header class="bg-white shadow-sm sticky top-0 z-50">
+    <nav class="container mx-auto flex justify-between items-center py-4 px-6">
+      <h1 class="text-2xl font-bold text-blue-600">Bigg Vision</h1>
+      <ul class="hidden md:flex space-x-8 font-medium">
+        <li><a href="#about" class="hover:text-blue-600 transition">About</a></li>
+        <li><a href="#services" class="hover:text-blue-600 transition">Services</a></li>
+        <li><a href="#contact" class="hover:text-blue-600 transition">Contact</a></li>
+      </ul>
+      <a href="#services" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl shadow transition transform hover:scale-105">
+        Get Started
+      </a>
     </nav>
   </header>
 
   <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Simplifying Real-World Processes for Indian Youth</h1>
-      <p>
-        AI-powered step-by-step guidance for banking, government documents, and studying abroad —
-        so you never feel lost in the system again.
-      </p>
-      <div class="hero-buttons">
-        <a href="#services" class="btn-primary">Get Started</a>
-        <a href="#about" class="btn-secondary">Learn More</a>
+  <section class="bg-gradient-to-r from-blue-50 to-purple-50 py-20">
+    <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-10">
+      <!-- Left: Text -->
+      <div class="md:w-1/2 text-center md:text-left">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+          Navigate India’s Systems with Confidence
+        </h2>
+        <p class="mt-4 text-lg text-gray-600">
+          AI-powered step-by-step guidance for banking, licenses, studying abroad, and more.
+        </p>
+        <div class="mt-6 flex justify-center md:justify-start gap-4">
+          <a href="#services" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl shadow-md transition transform hover:scale-105">
+            Get Started
+          </a>
+          <a href="#about" class="bg-white border border-gray-300 hover:border-blue-600 hover:text-blue-600 px-6 py-3 rounded-xl shadow-md transition">
+            Learn More
+          </a>
+        </div>
       </div>
-      <!-- Hero Image -->
-      <img src="hero.png" alt="Young person navigating administrative work">
+
+      <!-- Right: Image -->
+      <div class="md:w-1/2">
+        <img src="images/hero.png" alt="Hero Illustration" class="rounded-2xl shadow-lg">
+      </div>
     </div>
   </section>
 
   <!-- About Section -->
-  <section id="about">
-    <h2>About Us</h2>
-    <p>
-      We help Indian youth navigate complex real-world systems like 
-      banking, government documents, studying abroad, and more.
-      Our AI-driven step-by-step guidance makes processes simple, 
-      stress-free, and easy to complete.
-    </p>
+  <section id="about" class="py-16 bg-white">
+    <div class="container mx-auto px-6 text-center max-w-3xl">
+      <h2 class="text-3xl font-bold text-gray-900 mb-4">About Us</h2>
+      <p class="text-gray-600 text-lg leading-relaxed">
+        We help young Indians navigate complex administrative systems with ease. 
+        From banking to licenses, we provide personalized, AI-driven guidance so you can focus on your goals.
+      </p>
+    </div>
   </section>
 
   <!-- Services Section -->
-  <section id="services">
-    <h2>Our Services</h2>
-    <div class="services">
-      <div class="service-box">
-        <h3>Government Docs</h3>
-        <p>Step-by-step help for driving license, passport, voter ID, and more.</p>
-      </div>
-      <div class="service-box">
-        <h3>Banking & Finance</h3>
-        <p>Guides on opening bank accounts, PF, insurance, and tax filing.</p>
-      </div>
-      <div class="service-box">
-        <h3>Study Abroad</h3>
-        <p>Support for visa, scholarships, and admission processes abroad.</p>
+  <section id="services" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Our Services</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition">
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">Banking Guidance</h3>
+          <p class="text-gray-600">Step-by-step help with accounts, loans, and digital banking.</p>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition">
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">License & ID Support</h3>
+          <p class="text-gray-600">Navigate driving licenses, Aadhaar, and PAN card applications.</p>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition">
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">Study Abroad Help</h3>
+          <p class="text-gray-600">Guidance for applications, visas, and financial planning.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p>Have questions or need help? Reach out to us:</p>
-    <div class="contact-links">
-      <a href="mailto:yourname@email.com">📧 Email Us</a>
-      <a href="https://wa.me/91XXXXXXXXXX" target="_blank">💬 WhatsApp</a>
+  <section id="contact" class="py-16 bg-white">
+    <div class="container mx-auto px-6 text-center max-w-2xl">
+      <h2 class="text-3xl font-bold text-gray-900 mb-4">Contact Us</h2>
+      <p class="text-gray-600 mb-8">Have questions or suggestions? Get in touch!</p>
+      <a href="mailto:yourstartup@email.com" 
+         class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl shadow-md transition">
+         Email Us
+      </a>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer>
-    <p>© 2025 My Startup | Powered by GitHub Pages</p>
+  <footer class="bg-gray-900 text-gray-300 py-6 text-center">
+    <p>&copy; 2025 Bigg Vision. All rights reserved.</p>
   </footer>
 
 </body>
 </html>
-
