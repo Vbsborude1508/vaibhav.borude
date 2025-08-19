@@ -61,6 +61,49 @@
       </div>
     </div>
   </section>
+<!-- Search Section -->
+<section class="bg-gray-50 py-10">
+  <div class="max-w-3xl mx-auto text-center">
+    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Search Our Guides</h2>
+    <div class="flex items-center justify-center">
+      <input 
+        id="searchInput"
+        type="text" 
+        placeholder="Search for banking, licenses, study abroad..." 
+        class="w-full max-w-md px-4 py-3 border border-gray-300 rounded-l-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+      >
+      <button 
+        onclick="performSearch()" 
+        class="bg-blue-600 text-white px-6 py-3 rounded-r-xl hover:bg-blue-700 transition">
+        Search
+      </button>
+    </div>
+    <p id="noResults" class="mt-4 text-red-500 hidden">No matching results found.</p>
+  </div>
+</section>
+
+<script>
+  function performSearch() {
+    const input = document.getElementById("searchInput").value.toLowerCase();
+    const sections = document.querySelectorAll("section"); 
+    let foundAny = false;
+
+    sections.forEach(section => {
+      // Skip the search bar section itself
+      if (section.querySelector("#searchInput")) return;
+
+      if (section.textContent.toLowerCase().includes(input) || input === "") {
+        section.style.display = "block";
+        foundAny = true;
+      } else {
+        section.style.display = "none";
+      }
+    });
+
+    // Show "no results" message if nothing found
+    document.getElementById("noResults").classList.toggle("hidden", foundAny);
+  }
+</script>
 
   <!-- About Section -->
   <section id="about" class="py-16 bg-white">
@@ -113,5 +156,6 @@
 
 </body>
 </html>
+
 
 
