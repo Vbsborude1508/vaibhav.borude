@@ -3,140 +3,249 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vaibhav Startup</title>
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
-  <!-- TailwindCSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
+  <title>Startup Landing Page</title>
   <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
     body {
-      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      background: #f9fafb;
+      color: #1f2937;
+    }
+
+    header {
+      background: #1E3A8A;
+      color: white;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(to right, #1E3A8A, #3B82F6);
+      color: white;
+      text-align: center;
+      padding: 60px 20px; /* shrunk height */
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero h2 {
+      font-size: 40px;
+      margin-bottom: 15px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeSlideUp 1s forwards;
+    }
+
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 25px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeSlideUp 1s forwards;
+      animation-delay: 0.3s;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      background: #FACC15;
+      color: #1E3A8A;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+      animation: bounce 2s infinite, glow 2.5s infinite alternate;
+    }
+
+    .cta-btn:hover {
+      background: #EAB308;
+    }
+
+    /* Fade-in + Slide-up */
+    @keyframes fadeSlideUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Bounce Animation */
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-8px);
+      }
+      60% {
+        transform: translateY(-4px);
+      }
+    }
+
+    /* Glow Animation */
+    @keyframes glow {
+      from {
+        box-shadow: 0 0 5px #FACC15, 0 0 10px #FACC15, 0 0 15px #FACC15;
+      }
+      to {
+        box-shadow: 0 0 15px #FACC15, 0 0 25px #FACC15, 0 0 35px #FACC15;
+      }
+    }
+
+    /* Services Section */
+    .services {
+      padding: 60px 20px;
+      text-align: center;
+      background: #f3f4f6;
+    }
+
+    .services h2 {
+      font-size: 32px;
+      margin-bottom: 40px;
+    }
+
+    .service-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      width: 250px;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    /* About Section */
+    .about {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .about h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    .about p {
+      max-width: 700px;
+      margin: auto;
+      font-size: 18px;
+      color: #374151;
+    }
+
+    /* Contact Section */
+    .contact {
+      background: #1E3A8A;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .contact h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .contact a {
+      color: #FACC15;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer {
+      background: #111827;
+      color: #9ca3af;
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
     }
   </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
-
-  <!-- Header -->
-  <header class="bg-white shadow-sm sticky top-0 z-50">
-    <nav class="container mx-auto flex justify-between items-center py-4 px-6">
-      <h1 class="text-2xl font-bold text-blue-600"> My Startup </h1>
-      <ul class="hidden md:flex space-x-8 font-medium">
-        <li><a href="#about" class="hover:text-blue-600 transition">About</a></li>
-        <li><a href="#services" class="hover:text-blue-600 transition">Services</a></li>
-        <li><a href="#contact" class="hover:text-blue-600 transition">Contact</a></li>
-      </ul>
+<body>
+  <header>
+    <h1>Our Startup</h1>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
-    <!-- Hero Section -->
-  <section class="hero" style="height:60vh; padding:40px 20px; display:flex; align-items:center; justify-content:center; text-align:center; flex-direction:column; background:#f9fafb;">
-    
-    <!-- Heading -->
-    <h1 style="font-size:2.2rem; font-weight:700; color:#1e3a8a; margin-bottom:15px;">
-      Navigate Real-World Systems with Ease
-    </h1>
-    
-    <!-- Subheading -->
-    <p style="font-size:1.1rem; color:#374151; max-width:600px; margin:0 auto 25px;">
-      From banking and driving licenses to studying abroad — we provide step-by-step guidance to simplify your journey.
-    </p>
-
-    <!-- Search Bar -->
-    <div class="flex items-center justify-center w-full max-w-lg mb-6">
-      <input 
-        id="searchInput"
-        type="text" 
-        placeholder="Search for banking, licenses, study abroad..." 
-        class="w-full px-4 py-3 border border-gray-300 rounded-l-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
-      >
-      <button 
-        onclick="performSearch()" 
-        class="bg-blue-600 text-white px-6 py-3 rounded-r-xl hover:bg-blue-700 transition">
-        Search
-      </button>
-    </div>
-    <p id="noResults" class="mt-2 text-red-500 hidden">No matching results found.</p>
-    
-    <!-- Hero Image -->
-    <img src="images/hero.png" alt="AI guiding through administrative maze" style="max-height:250px; width:auto; margin-bottom:20px; border-radius:10px;">
+  <section class="hero">
+    <h2>Navigate the System with Ease</h2>
+    <p>We simplify real-world processes like banking, licenses, and studying abroad with AI-powered guidance.</p>
+    <a href="#services" class="cta-btn">Get Started</a>
   </section>
 
-
-  <script>
-    function performSearch() {
-      const input = document.getElementById("searchInput").value.toLowerCase();
-      const sections = document.querySelectorAll("section"); 
-      let foundAny = false;
-
-      sections.forEach(section => {
-        // Skip the hero section itself
-        if (section.querySelector("#searchInput")) return;
-
-        if (section.textContent.toLowerCase().includes(input) || input === "") {
-          section.style.display = "block";
-          foundAny = true;
-        } else {
-          section.style.display = "none";
-        }
-      });
-
-      // Show "no results" message if nothing found
-      document.getElementById("noResults").classList.toggle("hidden", foundAny);
-    }
-  </script>
-
-  <!-- About Section -->
-  <section id="about" class="py-16 bg-white">
-    <div class="container mx-auto px-6 text-center max-w-3xl">
-      <h2 class="text-3xl font-bold text-gray-900 mb-4">About Us</h2>
-      <p class="text-gray-600 text-lg leading-relaxed">
-        We help young Indians navigate complex administrative systems with ease. 
-        From banking to licenses, we provide personalized, AI-driven guidance so you can focus on your goals.
-      </p>
-    </div>
-  </section>
-
-  <!-- Services Section -->
-  <section id="services" class="py-16 bg-gray-50">
-    <div class="container mx-auto px-6">
-      <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Our Services</h2>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition">
-          <h3 class="text-xl font-semibold text-gray-800 mb-2">Banking Guidance</h3>
-          <p class="text-gray-600">Step-by-step help with accounts, loans, and digital banking.</p>
-        </div>
-        <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition">
-          <h3 class="text-xl font-semibold text-gray-800 mb-2">License & ID Support</h3>
-          <p class="text-gray-600">Navigate driving licenses, Aadhaar, and PAN card applications.</p>
-        </div>
-        <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition">
-          <h3 class="text-xl font-semibold text-gray-800 mb-2">Study Abroad Help</h3>
-          <p class="text-gray-600">Guidance for applications, visas, and financial planning.</p>
-        </div>
+  <section id="services" class="services">
+    <h2>Our Services</h2>
+    <div class="service-cards">
+      <div class="card">
+        <h3>Banking Guidance</h3>
+        <p>Step-by-step help to open accounts, apply loans, or manage finances.</p>
+      </div>
+      <div class="card">
+        <h3>Government Services</h3>
+        <p>Navigate licensing, IDs, and official procedures with ease.</p>
+      </div>
+      <div class="card">
+        <h3>Study Abroad</h3>
+        <p>Get assistance with applications, visas, and admissions abroad.</p>
       </div>
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="py-16 bg-white">
-    <div class="container mx-auto px-6 text-center max-w-2xl">
-      <h2 class="text-3xl font-bold text-gray-900 mb-4">Contact Us</h2>
-      <p class="text-gray-600 mb-8">Have questions or suggestions? Get in touch!</p>
-      <a href="mailto:yourstartup@email.com" 
-         class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl shadow-md transition">
-         Email Us
-      </a>
-    </div>
+  <section id="about" class="about">
+    <h2>About Us</h2>
+    <p>We are building a platform to empower Indian youth by making real-world processes simple, transparent, and stress-free. Our AI-driven approach ensures personalized, step-by-step guidance tailored to each user’s needs.</p>
   </section>
 
-  <!-- Footer -->
-  <footer class="bg-gray-900 text-gray-300 py-6 text-center">
-    <p>&copy; 2025 Bigg Vision. All rights reserved.</p>
-  </footer>
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <p>Email us at <a href="mailto:info@ourstartup.com">info@ourstartup.com</a></p>
+  </section>
 
+  <footer>
+    <p>&copy; 2025 Our Startup. All rights reserved.</p>
+  </footer>
 </body>
 </html>
-
